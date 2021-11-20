@@ -12,5 +12,11 @@ def search():
     args = request.args.get("q")
     return redirect(f"https://google.com/search?q={args}")
 
+@app.get("/lucky") # WIP: this is currently is making two search bars for some reason
+def lucky():
+    args = request.args.get("f")
+    return redirect(f"https://google.com/search?q={args}&btnI")
+
 if __name__ == "__main__":
     app.run()
+
