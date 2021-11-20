@@ -16,7 +16,6 @@ def match_exact(word: str) -> list:
 
     # TODO: Clone the connection to the database
     
-
     # Return the results
     return "TODO"
 
