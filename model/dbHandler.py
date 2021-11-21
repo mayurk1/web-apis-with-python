@@ -10,14 +10,17 @@ def match_exact(word: str) -> list:
     4. If not return an empty list
     """
 
-    # TODO: Establish connection to the dictionary database
-
-    # TODO: Query the database for exact matches
-
-    # TODO: Clone the connection to the database
+    # Establish connection to the dictionary database 
+    db = SQL.connect( "data/dictionary.db" ) 
     
-    # Return the results
-    return "TODO"
+    # Query the database for exact matches 
+    sql_query = "SELECT * from entries WHERE word=?" 
+    match = db.execute(sql_query, (word,)).fetchall() 
+
+    # Clone the connection to the database 
+    db.close()
+    # Return the results 
+    return match
 
 
 def match_like(word: str) -> list:
